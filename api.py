@@ -178,7 +178,7 @@ async def log_food(message: Message):
         if response.status_code == 200:
             data = response.json()
             products = data.get('products', [])
-            if products:  # Проверяем, есть ли найденные продукты
+            if products:
                 first_product = products[0]
 
                 calories_100g = first_product.get('nutriments', {}).get('energy-kcal_100g', 0)
